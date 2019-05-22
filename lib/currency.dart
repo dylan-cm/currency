@@ -17,7 +17,7 @@ class Currency{
   ///of their non numerical counterparts represent hundredths of currency
   ///EX: `$ 1,200.99` represents 120099 cents
   Currency.fromString(String amount, {this.prefix}) 
-    : this.amount = amount.replaceAllMapped(RegExp(r'[\D]'), (Match m){return '';}),
+    : this.amount = _intToString(amount.replaceAllMapped(RegExp(r'[\D]'), (Match m){return '';})),
       this.cents = int.parse(amount.replaceAllMapped(RegExp(r'[\D]'), (Match m){return '';}));
   
   
