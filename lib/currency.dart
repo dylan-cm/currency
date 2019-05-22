@@ -35,6 +35,7 @@ class Currency{
      .replaceAllMapped(regCom, matchCom);
   }
 
+  ///Returns an American English spelling of the amount up to Vigintillions
   String spelledOut(){
 	final String input = this.cents.toString();
 
@@ -46,7 +47,7 @@ class Currency{
 
   //Add 'And' and the hundreth's of currency over 100
   var result = input.replaceAllMapped(
-    RegExp(r'(\d\d)$'), 
+    RegExp(r'(\d{1,2})$'), 
     (Match m){return 'And ${m[1]}/100';}
   );
   //Remove any padding of zeros as to ensure a correct match of thousands place
