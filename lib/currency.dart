@@ -42,7 +42,7 @@ class Currency{
   const List<String> units = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine '];
   const List<String> teens = ['Ten ', 'Eleven ', 'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ', 'Eighteen ', 'Nineteen '];
   const List<String> tens = ['', '', 'Twenty ', 'Thirty ', 'Forty ', 'Fifty ', 'Sixty ', 'Seventy ', 'Eighty ', 'Ninety '];
-  const List<String> thousands = [ '', 'Thousand ', 'Million ', 'Billion ', 'Trillion '];
+  const List<String> thousands = [ '', 'Thousand ', 'Million ', 'Billion ', 'Trillion ', 'Quadrillion ','Quintillion ', 'Sextillion ', 'Septillion ', 'Octillion ','Nonillion ', 'Decillion ', 'Undecillion ', 'Duodecillion ','Tredecillion ', 'Quattuordecillion ', 'Sexdecillion ','Septendecillion ', 'Octodecillion ', 'Novemdecillion ', 'Vigintillion '];
 
   //Add 'And' and the hundreth's of currency over 100
   var result = input.replaceAllMapped(
