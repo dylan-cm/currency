@@ -22,6 +22,8 @@ class Currency{
   
   
   static String _intToString(String s){
+    final regRemovePad = RegExp(r'^(0*)');
+    Function matchRemovePad = (Match match) => '';
     final regPad = RegExp(r'(?<!\d)(?=(\d{1,2})(?!\d))');
     Function matchPad = (Match match) => '${match[0]}0';
     final regCom = RegExp(r'(?<=\d)(?=(\d{3})+(?!\d))');
@@ -29,7 +31,8 @@ class Currency{
     final regDot = RegExp(r'(?<=\d)(?=(\d{2})(?!\d))');
     Function matchDot = (Match match) => '${match[0]}.';
     
-    return s.replaceAllMapped(regPad, matchPad)
+    return s.replaceAllMapped(regRemovePad, matchRemovePad)
+     .replaceAllMapped(regPad, matchPad)
      .replaceAllMapped(regPad, matchPad)
      .replaceAllMapped(regDot, matchDot)
      .replaceAllMapped(regCom, matchCom);
